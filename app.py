@@ -1,13 +1,9 @@
 from flask import Flask, render_template, url_for
-import pymongo
-import datetime
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+
 from scraper import scrape
 from time import sleep
 import requests
 import json
-from firebase_admin import credentials, initialize_app, storage
 from urllib.request import urlretrieve
 from flask import Flask, request
 from flask_cors import CORS
@@ -16,9 +12,6 @@ import os
 import pandas as pd
 from flatten_json import flatten
 import re
-import signal
-import threading
-from flask import jsonify
 
 
 def get_videodata(link, key):
