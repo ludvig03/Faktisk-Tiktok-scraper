@@ -15,7 +15,7 @@ Programvare for nedlastning av TikTok-data
 Kjør denne her for å installere alle dependencies når du har lastet ned repoet:
 
 ```bash
-pip3 install flask requests json selenium pandas
+pip3 install flask requests flask_cors selenium pandas flatten_json 
 ```
 
 ## Bruk
