@@ -1,7 +1,3 @@
-import pymongo
-import datetime
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -9,8 +5,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
-import random
-import re
 from pathlib import Path
 import os
 import datetime
