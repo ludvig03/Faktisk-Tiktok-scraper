@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/x-icon" href="../static/Tikok_favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="main">
+        <h1>Tiktok-scraper</h1>
+        <div id="section-api">
+            <div id="api-tekst-div">
+                <p id="api-tekst">Legg inn
+                    <a href="https://rapidapi.com/yi005/api/tiktok-video-no-watermark2" id="api-link">
+                        API-nøkkel
+                    </a> 
+                i dette feltet:</p>
+            </div>
+            <input type="text" name="key" id="key" placeholder="X-RapidAPI-Key...">
+        </div>
+        <p id="brukernavn-tittel">Kommaseparerte brukernavn: </p>
+        <div id="input-field">
+            <textarea type="text" name="usernames" id="usernames" placeholder="Skriv brukernavn her..."></textarea>
+            <div class="lds-facebook" id="lds-facebook"><div></div><div></div><div></div></div>
+        </div>
+        <p id="tips">Scraperen må jobbe en stund om du prøver å laste ned mange videoer. Den bruker opptil 5 sekunder per video.</p>
+        <div id="button-div">
+            <button type="button" id="btn" onclick="start()">Start</button>
+        </div>
+        
+
+    </div>
+    <hr id="footer-linje">
+    <img src="../static/logo.png"/ id="logo">
+    <script type="text/javascript">
+
+        // Function to handle file upload and parsing
+        function start() {
+            //check loader and change to oposite
+            var loader = document.getElementById("lds-facebook").style.display
+            if (loader == "inline-block") {
+                document.getElementById("lds-facebook").style.display = "none"
+                console.log("starter avbrytelse")
+            } else {
+                document.getElementById("lds-facebook").style.display = "inline-block"
+                console.log("kjorer")
+                
+            }
+            var btn = document.getElementById("btn").innerHTML
+            if (btn == "Start") {
+                document.getElementById("btn").innerHTML = "Kjører"
+                //make all borders grey
+                document.getElementById("btn").style.border = "2px solid #d3d3d3"
+                document.getElementById("btn").style.color = "#d3d3d3"
+                document.getElementById("usernames").style.color = "#d3d3d3"
+                document.getElementById("usernames").readOnly = true
+                document.getElementById("btn").disabled = true
+                document.getElementById("btn").style.width = "250px"
+                document.getElementById("btn").style.height = "40px"
+                document.getElementById("btn").style.fontSize = "15px"
+
+                handleFileUpload()
+            } else {
+                document.getElementById("btn").innerHTML = "Start"
+                document.getElementById("btn").style.color = "black"
+                document.getElementById("usernames").style.color = "black"
+                document.getElementById("usernames").readOnly = false
+
+            }
+
+
+
+        }
+
+        function ready() {
+
+        }
+
+        function running() {
+            
+        }
+
+        function handleFileUpload(event) {
+            //send post request to server with textarea and id name as parameters
+            var brukernavn = document.getElementById("usernames").value
+            var key = document.getElementById("key").value
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1:5000/scrape_serve", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                brukernavn: brukernavn,
+                key: key
+            }));
+
+
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    document.getElementById("lds-facebook").style.display = "none"
+                    document.getElementById("btn").innerHTML = "Start"
+                    document.getElementById("btn").style.color = "black"
+                    document.getElementById("usernames").style.color = "black"
+                    document.getElementById("usernames").readOnly = false
+                    document.getElementById("btn").disabled = false
+                    document.getElementById("btn").style.border = "2px solid black"
+
+
+                    
+                }
+                if (xhr.status == 404) {
+                    console.log("404")
+                    window.alert("Noe gikk galt, sjekk konsollen for feilmeldinger")
+                    document.getElementById("lds-facebook").style.display = "none"
+                    document.getElementById("btn").innerHTML = "Start"
+                    document.getElementById("btn").style.color = "black"
+                    document.getElementById("btn").style.border = "2px solid black"
+                    document.getElementById("usernames").style.color = "black"
+                    document.getElementById("usernames").readOnly = false
+                    document.getElementById("btn").disabled = false
+
+                }
+            }
+
+        }
+            
+
+        
+
+    </script>
+</body>
+</html>

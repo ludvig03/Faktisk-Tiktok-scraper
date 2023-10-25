@@ -1,0 +1,195 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #fcf9f2;
+    display: block;
+    
+}
+
+#main {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    padding-top: 30px;
+    font-family: sans-serif;
+    background-color: #fcf9f2;
+    display: block;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+#section-api {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#key::-webkit-input-placeholder {
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+#api-tekst {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 20px;
+    display: flex;
+    text-decoration: none;
+}
+
+#api-tekst-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#api-link {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: underline;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#key {
+    height: 40px;
+    width: 300px;
+    border-top: 1px;
+    border-right: 1px;
+    border-left: 1px;
+    border-color: black;
+    background-color: #fcf9f2;
+    font-size: 15px;
+    font-family: 'Roboto Mono', sans-serif;;
+    text-align: center;
+    margin-bottom: 20px;
+    outline: none;
+
+}
+
+
+h1 {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 40px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#brukernavn-tittel {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 25px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#usernames {
+    height: 35vh;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    background-color: #fcf9f2;
+    padding-top: 20px;
+    outline: none;
+    resize: none;
+}
+
+#button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+#btn {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fcf9f2;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+#tips {
+    margin: none;
+}
+
+#btn:active {
+    height: 32px;
+    width: 200px;
+    font-size: 80%;
+}
+
+#logo {
+    position: absolute;
+    width: 250px;
+    left: 80px;
+    bottom: 1.7rem;
+}
+
+#footer-linje {
+    position: relative;
+    margin-left: 123px;
+    margin-right: 123px;
+    top: 20px;
+    border: none;
+    height: 2px;
+    background: black;
+    margin-bottom: 50px;
+    display: none;
+}
+
+#input-field {
+    position: relative;
+}
+
+#lds-facebook {
+    position: absolute;
+    z-index: 99;
+    left: 43%;
+    bottom: 50%;
+
+    width: 80px;
+    height: 80px;
+    display: none;
+  }
+  .lds-facebook div {
+    z-index: 99;
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 10px;
+    background: #363636;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
