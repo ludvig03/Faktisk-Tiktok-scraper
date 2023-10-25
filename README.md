@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/ludvig03/Tiktok-scraper/main/static/TikTok_Scraper.png?token=GHSAT0AAAAAACJB7RHLAAVH67EGFB6JNECQZJY7DBA)
+![alt text](https://raw.githubusercontent.com/ludvig03/Faktisk-Tiktok-scraper/main/static/TikTok_Scraper.png)
 
 # Tiktok-scraper
 
