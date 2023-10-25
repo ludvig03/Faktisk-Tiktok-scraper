@@ -7,7 +7,6 @@ import json
 from urllib.request import urlretrieve
 from flask import Flask, request
 from flask_cors import CORS
-from bson import json_util
 import os
 import pandas as pd
 from flatten_json import flatten
@@ -59,9 +58,6 @@ CORS(app)
 @app.route('/')
 def index():
     return render_template('base.html')
-
-def parse_json(data):
-    return json.loads(json_util.dumps(data))
 
 
 def flatten_json(y):
