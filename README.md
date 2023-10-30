@@ -9,7 +9,7 @@ Programvare for nedlastning av TikTok-data
 Dette verktøyet krever noen forkunnskaper om programmering. For å kjøre scraperen, må du installere følgende fra terminalen:
 
 1. [python3](https://www.python.org/downloads/)
-2. pip3 (Skal komme med python, evt installer py med homebrew)
+2. pip3 (Skal komme med python, evt installer py med [homebrew](https://brew.sh/))
 3. [git](https://git-scm.com/downloads)
 
 
